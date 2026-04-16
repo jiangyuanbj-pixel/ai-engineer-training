@@ -71,7 +71,7 @@ def demo():
         template.analysis_type = analysis
         short_prompt = template.format(person_info=person_data)
         print(f"\n{analysis}:")
-        print(short_prompt.split('\n')[-5])  # 只显示最后5行
+        print(short_prompt.split('\n'))  # 只显示最后5行
 
 if __name__ == "__main__":
     demo()

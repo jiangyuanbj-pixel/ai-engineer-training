@@ -37,12 +37,12 @@ tools = [
 
 # 创建一个消息列表，随着时间推移会不断添加内容
 messages = [
-    {"role": "user", "content": "我的运势如何？我是水瓶座。"}
+    {"role": "user", "content": "我的运势如何？我是水瓶座。"} #用户消息
 ]
 
 # 2. 使用定义的工具提示模型
 response = client.chat.completions.create(
-    model="gpt-4o-mini",
+    model="deepseek-chat",
     tools=tools,
     messages=messages,
 )
@@ -53,7 +53,7 @@ print(json.dumps(response.model_dump(), indent=2, ensure_ascii=False))
 # 保存函数调用输出以供后续请求使用
 function_call = None
 function_call_arguments = None
-messages.append(response.choices[0].message)
+messages.append(response.choices[0].message)  #ai消息
 
 # 检查模型是否想要调用函数
 if response.choices[0].message.tool_calls:
@@ -70,7 +70,7 @@ def get_horoscope(sign):
 result = {"horoscope": get_horoscope(function_call_arguments["sign"])}
 
 # 4. 向模型提供函数调用结果
-messages.append({
+messages.append({  #工具消息
     "tool_call_id": function_call.id,
     "role": "tool",
     "name": "get_horoscope",
@@ -90,7 +90,7 @@ for i, message in enumerate(messages):
 
 
 response = client.chat.completions.create(
-    model="gpt-4o-mini",
+    model="deepseek-chat",
     tools=tools,
     messages=messages,
 )

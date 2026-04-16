@@ -1,0 +1,65 @@
+{
+    // Python 相关设置
+    "python.defaultInterpreterPath": "/opt/miniconda3/bin/python3",
+    "python.analysis.typeCheckingMode": "basic",
+    "python.analysis.autoImportCompletions": true,
+    "python.analysis.indexing": true,
+    "python.analysis.diagnosticMode": "workspace",
+    
+    // 编辑器设置
+    "editor.quickSuggestions": {
+        "other": true,
+        "comments": false,
+        "strings": false
+    },
+    "editor.suggestOnTriggerCharacters": true,
+    "editor.parameterHints.enabled": true,
+    
+    // 语言服务器设置
+    "python.languageServer": "Pylance",
+    "[python]": {
+        "editor.formatOnType": true,
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "explicit"
+        }
+    },
+    
+    // 工作区设置
+    "files.exclude": {
+        "**/__pycache__": true,
+        "**/*.pyc": true
+    },
+    "search.exclude": {
+        "**/node_modules": true,
+        "**/bower_components": true,
+        "**/*.code-search": true
+    },
+    
+    // 调试设置
+    "python.terminal.activateEnvironment": true,
+    "python.terminal.launchArgs": [],
+    
+    // 资源管理器目录树缩进设置
+    "workbench.tree.indent": 36,  // 增加目录树缩进（默认值通常是 8）
+    "workbench.tree.renderIndentGuides": "always",  // 总是显示缩进引导线
+    "workbench.sideBar.location": "left",  // 侧边栏位置
+    
+    // 文件图标设置
+    "workbench.iconTheme": "vs-seti",  // 图标主题
+    "workbench.tree.expandMode": "singleClick",  // 单击展开/折叠
+    
+    // 字体和间距设置
+    "editor.fontSize": 14,
+    "editor.lineHeight": 1.6,
+    "workbench.tree.itemHeight": 24,  // 增加树项高度
+    "workbench.list.horizontalScrolling": true,  // 允许水平滚动
+    
+    // 文件资源管理器设置
+    "explorer.compactFolders": false,  // 不压缩文件夹显示
+    "explorer.autoReveal": true,  // 自动显示当前文件
+    "explorer.fileNesting.enabled": true,  // 启用文件嵌套
+    "explorer.fileNesting.expand": true,  // 展开嵌套文件
+    "explorer.sortOrder": "type",  // 按类型排序
+    "explorer.decorations.colors": true  // 显示装饰颜色
+}

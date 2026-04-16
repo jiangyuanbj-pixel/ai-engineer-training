@@ -14,7 +14,7 @@ client = OpenAI(
 
 
 response = client.chat.completions.create(
-    model="o3-mini",
+    model="deepseek-chat",
     messages=[
         {"role": "user", "content": "Hello world!"}
     ]

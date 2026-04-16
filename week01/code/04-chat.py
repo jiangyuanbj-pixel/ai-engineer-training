@@ -25,7 +25,7 @@ def query(user_prompt):
     """
     try:
         response = client.chat.completions.create(
-            model="o3-mini",
+            model="deepseek-chat",
             messages=[
                 {"role": "user", "content": user_prompt}
             ]

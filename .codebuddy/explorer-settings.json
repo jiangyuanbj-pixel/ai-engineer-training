@@ -1,0 +1,55 @@
+{
+    "// 资源管理器目录树高级设置": "================================",
+    
+    "workbench.tree.indent": 30,
+    "workbench.tree.itemHeight": 28,
+    "workbench.tree.renderIndentGuides": "always",
+    "workbench.tree.expandMode": "singleClick",
+    
+    "// 文件资源管理器设置": "================================",
+    "explorer.compactFolders": false,
+    "explorer.autoReveal": true,
+    "explorer.sortOrder": "type",
+    "explorer.decorations.colors": true,
+    "explorer.decorations.badges": true,
+    
+    "// 文件嵌套设置": "================================",
+    "explorer.fileNesting.enabled": true,
+    "explorer.fileNesting.expand": true,
+    "explorer.fileNesting.patterns": {
+        "*.ts": "${capture}.js, ${capture}.d.ts, ${capture}.test.ts, ${capture}.spec.ts",
+        "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
+        "*.py": "${capture}.pyc, ${capture}.pyo, ${capture}.pyd, ${capture}.pyi",
+        "*.html": "${capture}.css, ${capture}.js, ${capture}.json",
+        "go.mod": "go.sum",
+        "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml, .npmrc",
+        "requirements.txt": "requirements-dev.txt, setup.py, pyproject.toml"
+    },
+    
+    "// 颜色主题和图标": "================================",
+    "workbench.colorTheme": "Default Dark Modern",
+    "workbench.iconTheme": "vs-seti",
+    "workbench.sideBar.location": "left",
+    
+    "// 字体和间距": "================================",
+    "editor.fontSize": 14,
+    "editor.lineHeight": 1.6,
+    "editor.letterSpacing": 0.5,
+    "workbench.fontAliasing": "auto",
+    
+    "// 滚动和视图": "================================",
+    "workbench.list.horizontalScrolling": true,
+    "editor.scrollBeyondLastLine": true,
+    "editor.scrollbar.verticalScrollbarSize": 12,
+    "editor.scrollbar.horizontalScrollbarSize": 12,
+    
+    "// 动画效果": "================================",
+    "workbench.enableExperiments": false,
+    "workbench.settings.enableNaturalLanguageSearch": true,
+    
+    "// 快捷键提示": "================================",
+    "// Ctrl+Shift+E 或 Cmd+Shift+E 打开资源管理器": "",
+    "// Ctrl+B 或 Cmd+B 切换侧边栏": "",
+    "// Ctrl+Shift+F 或 Cmd+Shift+F 搜索": "",
+    "// Ctrl+P 或 Cmd+P 快速打开文件": ""
+}
