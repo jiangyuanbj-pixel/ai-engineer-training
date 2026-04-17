@@ -4,12 +4,17 @@ import time
 from collections import defaultdict
 import json
 from datetime import datetime
-from langchain_core.messages import HumanMessage, AIMessage
+from langchain_core.messages import HumanMessage, AIMessage, ToolMessage, BaseMessage
 
 
 class SessionManager:
     def __init__(self, max_history_length: int = 10):
+        #对话轮次，dict存放用户问题和大模型回复 过滤与tool的交互
         self.sessions: Dict[str, List[Dict]] = defaultdict(list)
+
+        #存放所有消息，包括tool消息  
+        self.messages: Dict[str, List[BaseMessage]] = {}
+
         self.max_history_length = max_history_length
         self.last_activity: Dict[str, float] = {}
     
@@ -17,7 +22,7 @@ class SessionManager:
         """获取会话历史"""
         self._update_activity(session_id)
         return self.sessions.get(session_id, [])
-    
+
     def add_message(self, session_id: str, user_message: str, bot_reply: str):
         """添加对话记录"""
         self._update_activity(session_id)
@@ -34,7 +39,15 @@ class SessionManager:
         
         # 限制历史长度
         if len(self.sessions[session_id]) > self.max_history_length:
-            self.sessions[session_id] = self.sessions[session_id][-self.max_history_length:]
+            self.sessions[session_id] = self.sessions[session_id][-self.max_history_length:]    
+    
+    #BaseMessage维度
+    def get_history_messages(self, session_id: str) -> List[BaseMessage]:
+        """获取会话历史"""
+        self._update_activity(session_id)
+        return self.messages.get(session_id, [])    
+    
+    
     
     def clear_session(self, session_id: str):
         """清除会话"""
